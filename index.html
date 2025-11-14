@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dev To-Do — Multi-Theme</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="theme-professional"> <!-- default theme -->
+  <main class="wrap" role="main">
+    <header class="header">
+      <div class="title">
+        <h1>Dev To-Do</h1>
+        <p class="subtitle">Multi-theme · Keyboard-first · Portfolio Ready</p>
+      </div>
+
+      <div class="tools">
+        <input id="search" aria-label="Search tasks" placeholder="Search tasks..." />
+        <div class="controls">
+          <select id="themeSelect" aria-label="Choose theme" title="Switch theme">
+            <option value="theme-professional">Professional</option>
+            <option value="theme-colorful">Colorful</option>
+            <option value="theme-hacker">Hacker</option>
+            <option value="theme-card">Card Mobile</option>
+            <option value="theme-dashboard">Dashboard</option>
+            <option value="theme-student">Student</option>
+          </select>
+          <button id="toggleLight" title="Toggle light mode">Light</button>
+          <button id="exportBtn" title="Export tasks (Ctrl+S)">Export</button>
+          <label class="filelabel" title="Import JSON">
+            Import
+            <input id="importFile" type="file" accept="application/json" />
+          </label>
+        </div>
+      </div>
+    </header>
+
+    <section class="card">
+      <form id="addForm" class="add-form" autocomplete="off">
+        <input id="taskInput" placeholder="Add new task — press Enter" aria-label="New task" />
+        <select id="priority" aria-label="Priority">
+          <option value="normal">Normal</option>
+          <option value="low">Low</option>
+          <option value="high">High</option>
+        </select>
+        <button id="addBtn" type="submit">Add</button>
+      </form>
+
+      <nav class="filters" role="tablist" aria-label="Filters">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="active">Active</button>
+        <button class="filter" data-filter="completed">Completed</button>
+      </nav>
+
+      <ul id="list" class="task-list" aria-live="polite"></ul>
+
+      <div class="footer">
+        <div class="stats"><span id="count">0</span> tasks</div>
+        <div class="footer-actions">
+          <button id="clearCompleted">Clear completed</button>
+          <button id="toggleTheme">Theme</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script defer src="script.js"></script>
+</body>
+</html>
